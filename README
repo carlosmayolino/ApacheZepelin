@@ -1,0 +1,14 @@
+Note : Since Apache Zeppelin and Spark use same 8080 port for their web UI, you might need to change zeppelin.server.port in conf/zeppelin-site.xml.
+
+1 -> docker build -t "spark_standalone" .
+2 -> 
+docker run -it \
+-p 8080:8080 \
+-p 7077:7077 \
+-p 8888:8888 \
+-p 8081:8081 \
+-h sparkmaster \
+--name spark_standalone \
+spark_standalone bash;
+
+
